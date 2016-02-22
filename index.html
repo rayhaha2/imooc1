@@ -1,200 +1,371 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>ÆóÒµÍøÕ¾ÊµÀı</title>
-<link href="css/main.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="js/setHomeSetFav.js"></script>
-<script type="text/javascript" src="js/myfocus-2.0.1.min.js" charset="utf-8"></script><!--ÒıÈëmyFocus¿â-->
-<script type="text/javascript">
-myFocus.set({
-    id:'boxID',//½¹µãÍ¼ºĞ×ÓID
-    pattern:'mF_fancy',//·ç¸ñÓ¦ÓÃµÄÃû³Æ
-    time:3,//ÇĞ»»Ê±¼ä¼ä¸ô(Ãë)
-    trigger:'click',//´¥·¢ÇĞ»»Ä£Ê½:'click'(µã»÷)/'mouseover'(ĞüÍ£)
-    width:1000,//ÉèÖÃÍ¼Æ¬ÇøÓò¿í¶È(ÏñËØ)
-    height:310,//ÉèÖÃÍ¼Æ¬ÇøÓò¸ß¶È(ÏñËØ)
-    txtHeight:'default'//ÎÄ×Ö²ã¸ß¶ÈÉèÖÃ(ÏñËØ),'default'ÎªÄ¬ÈÏ¸ß¶È£¬0ÎªÒş²Ø
-});
-</script>
+    <meta charset="UTF-8">
+    <title>æ…•è¯¾ç½‘</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
-<div class="top">
-  <div class="top_content">
-    <ul>
-      <li><a href="#">ÁªÏµÎÒÃÇ</a></li>
-      <li><a onclick="AddFavorite(window.location,document.title)" href="javascript:void(0)">¼ÓÈëÊÕ²Ø</a></li>
-      <li><a onclick="SetHome(window.location)" href="javascript:void(0)">ÉèÎªÊ×Ò³</a></li>
-    </ul>
-  </div>
-</div>
-<!--Ò³Ãæ¶¥¶Ëtop½áÊø-->
+    <div class="top">
+        <div class="top_content">
+            <ul>
+                <li><a href="#" onclick="SetHome(window.location)">è®¾ä¸ºé¦–é¡µ</a></li>
+                <li><a href="#" onclick="AddFavorite(window.location,document.title)">åŠ å…¥æ”¶è—</a></li>
+                <li><a href="#">è”ç³»æˆ‘ä»¬</a></li>
+            </ul>
+        </div>
+    </div><!-- top end -->
+    <div class="wrap">
+        <div class="logo">
+            <div class="logo-left">
+                <img src="image/logo.jpg" alt="æ…•è¯¾ç½‘">
+            </div>
+            <div class="logo-right">
+                <img src="image/tel.jpg" alt="æœåŠ¡çƒ­çº¿">24å°æ—¶æœåŠ¡çƒ­çº¿ <span class="tel">123-456-7890</span>
+            </div>
+        </div><!-- logo end -->
+        <div class="nav">
+            <div class="nav-left"></div>
+            <div class="nav-mid">
+                <div class="nav-mid-left">
+                    <ul>
+                        <li><a href="#">é¦–é¡µ</a></li>
+                        <li><a href="#">å…³äºæ…•è¯¾</a></li>
+                        <li><a href="#">æ–°é—»åŠ¨æ€</a></li>
+                        <li><a href="#">è¯¾ç¨‹ä¸­å¿ƒ</a></li>
+                        <li><a href="#">åœ¨çº¿è¯¾ç¨‹</a></li>
+                        <li><a href="#">äººæ‰æ‹›è˜</a></li>
+                    </ul>
+                </div>
+                <div class="nav-mid-right">
+                    <form action="" method="post">
+                        <input type="text" class="search-text">
+                    </form>
+                </div>
+            </div>
+            <div class="nav-right"></div>
+        </div><!-- nav end -->
+        <div id="picBox">
+            <!-- <div class="loading"><img src="image/loading.gif" alt="å›¾ç‰‡åŠ è½½ä¸­"></div> -->
+            <div id="list" style="left:-1000px;">   <!-- ä½¿ç”¨onfocuså›¾ç‰‡éœ€è¦è¢«.pic divåŒ…è£¹ -->
+                    <img src="image/ad4.jpg" alt="3"/>
+                    <img src="image/ad2.jpg" alt="1"/>
+                    <img src="image/ad3.jpg" alt="2"/>
+                    <img src="image/ad4.jpg" alt="3"/>
+                    <img src="image/ad2.jpg" alt="1"/>
+            </div>
+            <div id="buttons">
+                <span index="1" class="on"></span>
+                <span index="2"></span>
+                <span index="3"></span>
+            </div>
+            <a href="javascript:;" id="prev" class="arrow">&lt;</a>
+            <a href="javascript:;" id="next" class="arrow">&gt;</a>
+        </div><!--  ad end --> 
+        <div class="main">
+            <div class="news">
+                <div class="title">
+                    <h2 class="title-left">æ–°é—»ä¸­å¿ƒ</h2><span class="title-right"><a href="#">More&gt;&gt;</a></span>
+                </div>
+                <div class="news-pic">
+                    <img src="image/news.jpg" alt="æ–°é—»å›¾ç‰‡"><h2><a href="#">Lorem ipsum dolor sit amet!</a></h2>
+                    <p>æ´»åŠ¨æ—¶é—´ï¼š5æœˆ20æ—¥â€”5æœˆ25æ—¥<br>è·å¥–å…¬å¸ƒæ—¶é—´ï¼š5æœˆ26æ—¥<br><a href="#">Learn More&gt;&gt;</a></p>
+                </div>
+                <div class="news-list">
+                    <ul>
+                        <li><span>2016-02-18</span><a href="#">Lorem ipsum dolor sit amet!</a></li> 
+                        <li><span>2016-02-18</span><a href="#">Lorem ipsum dolor sit amet!</a></li>
+                        <li><span>2016-02-18</span><a href="#">Lorem ipsum dolor sit amet!</a></li>
+                        <li><span>2016-02-18</span><a href="#">Lorem ipsum dolor sit amet!</a></li>
+                    </ul> <!-- spanæ”¾åœ¨åé¢ IEä¸å…¼å®¹ -->
+                </div>
+            </div><!-- news end -->
+            <div class="course">
+                <div class="title">
+                    <h2 class="title-left">è¯¾ç¨‹ä¸­å¿ƒ</h2><span class="title-right"><a href="#">More&gt;&gt;</a></span>
+                </div>
+                <div class="course-pic">
+                    <img src="image/css.jpg" alt="csså›¾ç‰‡"><h2><a href="#">CSSåœ†è§’è¿›åŒ–è®º</a></h2>
+                    <p>CSSåœ†è§’çš„å®ç°ï¼Œç»å†äº†ä¸‰å¤§å‘å±•é˜¶æ®µï¼šèƒŒæ™¯å›¾ç‰‡æ–¹å¼ã€CSS2.0+HTMLæ ‡ç­¾æ¨¡æ‹Ÿã€CSS3.0åœ†è§’å±æ€§ï¼‰ã€‚æœ¬æ¡ˆä¾‹è¯¦ç»†è®²è§£æ¯ä¸€ç§çš„å®ç°æ–¹å¼ï¼Œå¹¶å¯¹å®ç°çš„ä¼˜ç¼ºç‚¹è¿›è¡Œå¯¹æ¯”åˆ†æã€‚</p>
+                </div>
+                
+                <div class="course-type">
+                    <ul>
+                        <li>PHPå¼€å‘</li>
+                        <li>å‰ç«¯å¼€å‘</li>
+                        <li>JAVAå¼€å‘</li>
+                        <li>Androidå¼€å‘</li>
+                    </ul>
+                </div>
+            </div><!-- course end -->
+            <div class="sidebar">
+                <div class="video">
+                    <div class="title">
+                        <h2 class="title-left">åª’ä½“èšç„¦</h2><span class="title-right"><a href="#">More&gt;&gt;</a></span>
+                    </div>
+                    <div class="video-content">
+                        <embed src="http://player.youku.com/player.php/sid/XNjkzMDE5MTUy/v.swf" allowfullscreen="true" quality="high" width="220" height="140" align="middle" allowscriptaccess="always" type="application/x-shockwave-flash">
+                    </div>
+                </div>
+                <div class="sidebar-ad">
+                    <a href="#" target="_blank"><img src="image/app.jpg" alt="appå›¾ç‰‡"></a>
+                </div>
+            </div><!-- sidebar end -->
+        </div>  <!-- main end -->
+    </div><!-- wrap end -->
+    <div class="copyright">
+        <div class="copyright-content">
+            <ul>
+                <li><a href="#">å…³äº</a>
+                    <ul>
+                          <li><a href="#">å“ç‰Œæ•…äº‹</a></li>
+                          <li><a href="#">è”ç³»æˆ‘ä»¬</a></li>
+                          <li><a href="#">åŠ å…¥æˆ‘ä»¬</a></li>
+                          <li><a href="#">ç‰ˆæƒå£°æ˜</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">è¯¾ç¨‹</a>
+                    <ul>
+                          <li><a href="#">PHPå¼€å‘</a></li>
+                          <li><a href="#">å‰ç«¯å¼€å‘</a></li>
+                          <li><a href="#">JAVAå¼€å‘</a></li>
+                          <li><a href="#">Androidå¼€å‘</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">ç•™è¨€</a>
+                    <ul>
+                          <li><a href="#">æ–°æµªå¾®åš</a></li>
+                          <li><a href="#">è…¾è®¯å¾®åš</a></li>
+                          <li><a href="#">ä¼ä¸šå¾®ä¿¡</a></li>
+                          <li><a href="#">QQç©ºé—´</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">å…³æ³¨</a>
+                    <ul>
+                          <li><a href="#">æ„è§åé¦ˆ</a></li>
+                          <li><a href="#">é—®é¢˜ç•™è¨€</a></li>
+                          <li><a href="#">åª’ä½“è”ç»œ</a></li>
+                          <li><a href="#">åœ¨çº¿å®¢æœ</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"><img src="image/weixin.png" alt="å¾®ä¿¡logo">å¾®ä¿¡å…³æ³¨</a>
+                    <ul>
+                          <li>
+                              <img src="image/qrcode.jpg" alt="å¾®ä¿¡äºŒç»´ç ">
+                          </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+     </div>a 
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
+    -->
+    <script type="text/javascript">
+    window.onload = function () {
+        var picBox = document.getElementById('picBox');
+        var list = document.getElementById('list');
+        var buttons = document.getElementById('buttons').getElementsByTagName('span');
+        var prev = document.getElementById('prev');
+        var next = document.getElementById('next');
+        var index = 1;
+        var animated = false;//ä¼˜åŒ–é¿å…é‡å¤æ‰§è¡Œ
+        var timer;
 
-<div class="wrap">
-  <div  class="logo">
-    <div class="logo_left"><img src="images/logo.jpg" /></div>
-    <div class="logo_right"><img src="images/tel.jpg" width="28" height="28" />24Ğ¡Ê±·şÎñÈÈÏß£º<span class="tel">123-456-7890</span></div>
-  </div>
-  <!--logo½áÊø-->
-  
-  <div class="nav">
-    <div  class="nav_left"></div>
-    <div class="nav_mid">
-      <div class="nav_mid_left">
-        <ul>
-          <li><a href="#">Ê×Ò³</a></li>
-          <li><a href="list.html">¹ØÓÚÄ½¿Î</a></li>
-          <li><a href="list.html">ĞÂÎÅ¶¯Ì¬</a></li>
-          <li><a href="list.html">¿Î³ÌÖĞĞÄ</a></li>
-          <li><a href="list.html">ÔÚÏß¿Î³Ì</a></li>
-          <li><a href="list.html">ÈË²ÅÕĞÆ¸</a></li>
-        </ul>
-      </div>
-      <!--nav_mid_left½áÊø-->
-      <div class="nav_mid_right">
-        <form action="" method="post">
-          <input type="text" class="search_text" />
-          <!--<input type="text" class="search_text" x-webkit-speech />-->
-        </form>
-      </div>
-      <!--nav_mid_right½áÊø--> 
-    </div>
-    <!--µ¼º½Ö÷Ìånav_mid½áÊø-->
-    <div class="nav_right"></div>
-  </div>
-  <!--nav½áÊø-->
-  
-  <div class="ad">
-    <div id="boxID"><!--½¹µãÍ¼ºĞ×Ó-->
-      <div class="loading"><img src="images/loading.gif" alt="ÇëÉÔºò..." /></div>
-      <!--ÔØÈë»­Ãæ(¿ÉÉ¾³ı)-->
-      <div class="pic"><!--ÄÚÈİÁĞ±í(liÊıÄ¿¿ÉËæÒâÔö¼õ)-->
-        <ul>
-          <li><a href="#"><img src="images/ad2.jpg" thumb="" alt="" text="ÏêÏ¸ÃèÊö2" /></a></li>
-          <li><a href="#"><img src="images/ad3.jpg" thumb="" alt="" text="ÏêÏ¸ÃèÊö3" /></a></li>
-          <li><a href="#"><img src="images/ad4.jpg" thumb="" alt="" text="ÏêÏ¸ÃèÊö4" /></a></li>
-          <li><a href="#"><img src="images/ad3.jpg" thumb="" alt="" text="ÏêÏ¸ÃèÊö5" /></a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <!--ad½áÊø-->
-  
-  <div class="main">
-    <div class="news">
-      <div class="title">
-        <h2 class="titile_left">ĞÂÎÅÖĞĞÄ</h2>
-        <span class="title_right"><a href="#">More&gt;&gt;</a></span> </div>
-      <!--title½áÊø-->
-      
-      <div class="pic_news"> <img src="images/news.jpg" alt="520 Ä½Å®Éñº°ÄãÀ´±í°×" width="113" height="77" />
-        <h2><a href="news.html">520 Ä½Å®Éñº°ÄãÀ´±í°×£¡</a></h2>
-        <p>»î¶¯Ê±¼ä£º5ÔÂ20ÈÕ¡ª5ÔÂ25ÈÕ<br />
-          »ñ½±¹«²¼Ê±¼ä£º5ÔÂ26ÈÕ<br />
-          <a href="news.html">Learn More>></a></p>
-      </div>
-      <!--pic_news½áÊø-->
-      
-      <div class="news_list">
-        <ul>
-          <li><span>2014-06-01</span> <a href="news.html">¡¾Ä½¿Í·ÃÌ¸ ÓÃ»§Æª¡¿¡°ÓĞÎªŒÅË¿¡±ÔÚÂ·ÉÏ</a></li>
-          <li><span>2014-06-01</span><a href="news.html">¡¾ÓĞ½±»î¶¯¡¿¸ø¸¸Ç×µÄÈıĞĞÊéĞÅ</a></li>
-          <li><span>2014-05-30</span><a href="news.html">¡¶³ÌĞòÔ³£¬ÇëÉ¹³öÄãµÄÍ¯Äê¡·»î¶¯»ñ½±¹«¸æ</a></li>
-          <li><span>2014-05-28</span><a href="news.html" title="aa">¡¾Ä½¿Î·ÃÌ¸¡¿ÆÆ¼ë³Éµû¡ª¡ªÃÀÅ®³ÌĞòÔ±µÄÍÉ±äÊ·</a></li>
-        </ul>
-      </div>
-      <!--news_list½áÊø--> 
-      
-    </div>
-    <!--news½áÊø-->
-    
-    <div class="products">
-      <div class="title">
-        <h2 class="titile_left">¿Î³ÌÖĞĞÄ</h2>
-        <span class="title_right"><a href="#">More&gt;&gt;</a></span> </div>
-      <!--title½áÊø-->
-      
-      <div class="product_list"><img src="images/css.jpg" alt="CSSÔ²½Ç½ø»¯ÂÛ" width="158" height="106" />
-        <h2><a href="news.html">CSSÔ²½Ç½ø»¯ÂÛ</a></h2>
-        <p> CSSÔ²½ÇµÄÊµÏÖ£¬¾­ÀúÁËÈı´ó·¢Õ¹½×¶Î£º±³¾°Í¼Æ¬·½Ê½¡¢CSS2.0+HTML±êÇ©Ä£Äâ¡¢CSS3.0Ô²½ÇÊôĞÔ£©¡£±¾°¸ÀıÏêÏ¸½²½âÃ¿Ò»ÖÖµÄÊµÏÖ·½Ê½£¬²¢¶ÔÊµÏÖµÄÓÅÈ±µã½øĞĞ¶Ô±È·ÖÎö¡£</p>
-      </div>
-      <!--product_list½áÊø-->
-      
-      <div class="product_type">
-        <ul>
-          <li>PHP¿ª·¢</li>
-          <li>Ç°¶Ë¿ª·¢</li>
-          <li>JAVA¿ª·¢</li>
-          <li>Android¿ª·¢</li>
-        </ul>
-      </div>
-    </div>
-    <!--products½áÊø-->
-    
-    <div class="sidebar">
-      <div class="video">
-        <div class="title">
-          <h2 class="titile_left">Ã½Ìå¾Û½¹</h2>
-          <span class="title_right"><a href="#">More&gt;&gt;</a></span> </div>
-        <!--title½áÊø-->
-        <p class="video_content">
-          <embed src="http://player.youku.com/player.php/sid/XNjkzMDE5MTUy/v.swf" allowFullScreen="true" quality="high" width="220" height="140" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>
-        </p>
-      </div>
-      <!--video½áÊø-->
-      
-      <div class="service"> <img src="images/app.jpg" /> </div>
-    </div>
-    <!--sidebar½áÊø--> 
-    
-  </div>
-  <!--main½áÊø--> 
-</div>
-<!--×îÍâ²ãwrap½áÊø  -->
-<div class="copyright">
-  <div class="copyright_content">
-    <ul>
-      <li>¹ØÓÚ
-        <ul>
-          <li>Æ·ÅÆ¹ÊÊÂ</li>
-          <li>ÁªÏµÎÒÃÇ</li>
-          <li>¼ÓÈëÎÒÃÇ</li>
-          <li>°æÈ¨ÉùÃ÷</li>
-        </ul>
-      </li>
-      <li>¿Î³Ì
-        <ul>
-          <li>PHP¿ª·¢</li>
-          <li>Ç°¶Ë¿ª·¢</li>
-          <li>JAVA¿ª·¢</li>
-          <li>Android¿ª·¢</li>
-        </ul>
-      </li>
-      <li>¹Ø×¢
-        <ul>
-          <li>ĞÂÀËÎ¢²©</li>
-          <li>ÌÚÑ¶Î¢²©</li>
-          <li>ÆóÒµÎ¢ĞÅ</li>
-          <li>QQ¿Õ¼ä</li>
-        </ul>
-      </li>
-      <li>ÁôÑÔ
-        <ul>
-          <li>Òâ¼û·´À¡</li>
-          <li>ÎÊÌâÁôÑÔ</li>
-          <li>Ã½ÌåÁªÂç</li>
-          <li>ÔÚÏß¿Í·ş</li>
-        </ul>
-      </li>
-      <li><img src="images/weixin.png" alt="Î¢ĞÅ¹Ø×¢" width="30" height="27" />Î¢ĞÅ¹Ø×¢
-        <ul>
-          <li><img src="images/qrcode.jpg" alt="É¨Ãè¹Ø×¢Ä½¿ÎÍø¹Ù·½Î¢ĞÅ" width="102" height="102" /></li>
-        </ul>
-      </li>
-    </ul>
-  </div>
-  <!--copyright_content½áÊø--> 
-</div>
+        function showButton(){
+            for (var i = 0; i < buttons.length; i++) {
+                if(buttons[i].className == 'on'){
+                    buttons[i].className = '';
+                    break;
+                }
+            }
+            buttons[index - 1].className = 'on';
+        }
+
+        function animate(offset){
+            animated = true; //ä¼˜åŒ–é¿å…é‡å¤æ‰§è¡Œ
+            var newLeft = parseInt(list.style.left) + offset;
+            var time = 400; //ä½ç§»æ€»æ—¶é—´
+            var interval = 10; //ä½ç§»é—´éš”æ—¶é—´
+            var speed = offset/(time/interval); //æ¯æ¬¡ä½ç§»é‡
+
+            function go(){
+                if ( (speed < 0 && parseInt(list.style.left) > newLeft) || (speed > 0 && parseInt(list.style.left) < newLeft) ) {
+                    list.style.left = parseInt(list.style.left) + speed + 'px';
+                    setTimeout(go,interval);
+                } else {
+                    animated = false;//ä¼˜åŒ–é¿å…é‡å¤æ‰§è¡Œ
+                    list.style.left = newLeft + "px";
+                    if (newLeft > -1000 ) {
+                        list.style.left = -3000 + 'px';
+                    } 
+                    if (newLeft < -3000 ) {
+                        list.style.left = -1000 + 'px';
+                    }; 
+                }
+            }
+                go();
+        }
+
+        function play(){
+            timer = setInterval(function(){ //è®¾å®šå®šæ—¶å™¨
+                next.onclick();
+            },3000)  
+        }
+
+        function stop(){
+            clearInterval(timer); //å…³é—­å®šæ—¶å™¨
+        }
+        /*function play() {
+            timer = setTimeout(function () {
+                next.onclick();
+                play();
+            }, interval);
+        }*/
+        next.onclick = function(){
+            if (index == 3) {
+                index = 1;
+            }else {
+                index += 1;
+            }
+
+            showButton();
+            if (!animated) {
+                animate(-1000);
+            };
+        }
+
+        prev.onclick = function(){
+            if (index == 1) {
+                index = 3;
+            }else {
+                index -= 1;
+            }
+
+            showButton();
+            if (!animated) {
+                animate(1000);
+            };
+        }
+
+        //æ»šåŠ¨button on åˆ‡æ¢
+        for (var i = 0; i < buttons.length; i++) {
+            buttons[i].onclick = function(){
+                if (this.className == 'on') {
+                    return;
+                };
+                var myIndex = parseInt(this.getAttribute('index'));
+                var offset = -1000 * (myIndex - index);
+                animate(offset);
+                index = myIndex;
+                if (!animated) {
+                    showButton();
+                };
+
+            }
+        };
+
+        picBox.onmouseover = stop;  
+        picBox.onmouseout = play;
+        play(); //onloadåè‡ªåŠ¨æ’­æ”¾
+    }
+    /*            function animate (offset) {
+                    if (offset == 0) {
+                        return;
+                    }
+                    animated = true;
+                    var time = 300;
+                    var inteval = 10;
+                    var speed = offset/(time/inteval);
+                    var left = parseInt(list.style.left) + offset;
+
+                    var go = function (){
+                        if ( (speed > 0 && parseInt(list.style.left) < left) || (speed < 0 && parseInt(list.style.left) > left)) {
+                            list.style.left = parseInt(list.style.left) + speed + 'px';
+                            setTimeout(go, inteval);
+                        }
+                        else {
+                            list.style.left = left + 'px';
+                            if(left>-200){
+                                list.style.left = -1000 * len + 'px';
+                            }
+                            if(left<(-1000 * len)) {
+                                list.style.left = '-1000px';
+                            }
+                            animated = false;
+                        }
+                    }
+                    go();
+                }
+
+                function showButton() {
+                    for (var i = 0; i < buttons.length ; i++) {
+                        if( buttons[i].className == 'on'){
+                            buttons[i].className = '';
+                            break;
+                        }
+                    }
+                    buttons[index - 1].className = 'on';
+                }
+
+                function play() {
+                    timer = setTimeout(function () {
+                        next.onclick();
+                        play();
+                    }, interval);
+                }
+                function stop() {
+                    clearTimeout(timer);
+                }
+
+                next.onclick = function () {
+                    if (animated) {
+                        return;
+                    }
+                    if (index == 3) {
+                        index = 1;
+                    }
+                    else {
+                        index += 1;
+                    }
+                    animate(-1000);
+                    showButton();
+                }
+                prev.onclick = function () {
+                    if (animated) {
+                        return;
+                    }
+                    if (index == 1) {
+                        index = 3;
+                    }
+                    else {
+                        index -= 1;
+                    }
+                    animate(1000);
+                    showButton();
+                }
+
+                for (var i = 0; i < buttons.length; i++) {
+                    buttons[i].onclick = function () {
+                        if (animated) {
+                            return;
+                        }
+                        if(this.className == 'on') {
+                            return;
+                        }
+                        var myIndex = parseInt(this.getAttribute('index'));
+                        var offset = -1000 * (myIndex - index);
+
+                        animate(offset);
+                        index = myIndex;
+                        showButton();
+                    }
+                }
+
+                picBox.onmouseover = stop;
+                picBox.onmouseout = play;
+
+                play();*/ 
+        </script>  
 </body>
 </html>

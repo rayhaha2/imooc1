@@ -1,0 +1,509 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+}
+
+body {
+    background: #f5f5f5;
+    font-family: "微软雅黑", Times, Baskerville, Georgia, serif;
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+.clearfix:after {
+    display: block;
+    overflow: hidden;
+    clear: both;
+    height: 0;
+    visibility: hidden;
+    content: '.';
+}
+
+.top {
+    width: 100%;
+    height: 30px;
+    background: url(../image/top_bg.jpg) repeat-x;
+}
+
+.top_content {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.top_content li {
+    width: 70px;
+    line-height: 30px;
+    list-style: none;
+    display: inline-block;  
+}
+
+.top_content ul {
+    float: right;
+}
+
+.top_content a:link, .top_content a:visited {
+    color: #8e8e8e;
+}
+
+.top_content a:hover, .top_content a:active {
+    color: #900; 
+}
+
+.wrap {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.logo {
+    height: 80px;
+    background: #fff;
+}
+
+.logo-left {
+    float: left;
+}
+
+.logo-right {
+    width: 300px;
+    height: 28px;
+    float: right;
+    margin-top: 30px;
+    color: #8e8e8e;
+}
+
+.logo-right img {
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.tel {
+    font-family: "微软雅黑", Times, Baskerville, Georgia, serif;
+    font-size: 16px;
+    color: #c00;
+}
+
+.nav {
+    height: 40px;
+    clear: both;
+}
+
+.nav-left {
+    width: 10px;
+    background: url(../image/nav_left.jpg) no-repeat;
+
+}
+
+.nav-mid {
+    width: 980px;
+    background: url(../image/nav_bg.jpg) repeat-x;
+}
+
+.nav-right {
+    width: 10px;
+    background: url(../image/nav_right.jpg) no-repeat;
+}
+
+.nav-left, .nav-mid, .nav-right {
+    float: left;
+    height: 40px;
+}
+
+.nav-mid-left, .nav-mid-right {
+    float: left;
+}
+
+.nav-mid-left {
+    width: 680px;
+}
+
+.nav-mid-right {
+    width: 300px;
+}
+
+.nav-mid-left li {
+    width: 100px;
+    line-height: 40px;
+    text-align: center;
+    float: left;
+    list-style: none;
+}
+
+.nav-mid-left a:link, .nav-mid-left a:visited {
+    color: #fff;
+    font-size: 16px;
+    font-family: "微软雅黑", Times, Baskerville, Georgia, serif;
+}
+
+.nav-mid-left a:hover, .nav-mid-left a:active {
+    color: #900;
+    font-size: 16px;
+    font-family: "微软雅黑", Times, Baskerville, Georgia, serif;
+}
+
+.search-text {
+    width: 190px;
+    height: 25px;
+    margin-top: 5px;
+    background: url(../image/search.jpg) no-repeat right center;
+    background-color: #fff;
+    padding-right: 25px;
+    border: 1px solid #fff;
+}
+
+/* 焦点图 */
+
+
+#picBox {
+    width: 1000px;
+    height: 310px;
+    overflow: hidden;
+    position: relative;
+}
+
+#list {
+    width: 5000px;
+    height: 310px;
+    position: absolute;
+    z-index: 1;
+}
+
+#list img {
+    float: left;
+}
+
+#buttons {
+    position: absolute;
+    height: 10px;
+    width: 100px;
+    z-index: 2;
+    bottom: 8px;
+    left: 492px;
+}
+
+#buttons span {
+    cursor: pointer;
+    float: left;
+    border: 1px solid #fff;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #333;
+    margin-right: 5px;
+}
+
+#buttons .on {
+    background: orangered;
+}
+
+.arrow {
+    cursor: pointer;
+    display: none;
+    line-height: 39px;
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    z-index: 2;
+    top: 136px;
+    background-color: RGBA(0,0,0,.3);
+    color: #fff;
+}
+
+.arrow:hover {
+    background-color: RGBA(0,0,0,.7);
+}
+
+#picBox:hover .arrow {
+    display: block;
+}
+
+#prev {
+    left: 20px;
+}
+
+#next {
+    right: 20px;
+}
+
+/* end 焦点图 */
+.ad {
+    height: 310px;
+    overflow: hidden;
+}
+
+.main {
+    height: 250px;
+    background: #eee;
+    margin-top: 5px;
+}
+
+.news {
+    width: 340px;
+    border: 1px solid #e8e8e8;
+
+}
+
+.course {
+    width: 410px;
+    border: 1px solid #e8e8e8;
+    margin: 0 7px;
+}
+
+.sidebar {
+    width: 230px;
+}
+
+.news, .course, .sidebar {
+    height: 250px;
+    float: left;
+}
+
+.title {
+    height: 35px;
+    border-bottom: 2px solid #e8e8e8;
+}
+
+.title-left {
+    width: 70%;
+    font-family: "微软雅黑", Times, Baskerville, Georgia, serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #786f66;
+    float: left;
+    line-height: 35px;
+    padding-left: 20px;
+}
+
+.title-right {
+    width: 20%;
+    float: right;
+    line-height: 35px;
+}
+
+.title-right a {
+    color: #999;
+}
+
+.news-pic {
+    height: 80px;
+    margin-top: 10px;
+    line-height: 20px;
+}
+
+.news-pic img, .course-pic img {
+    float: left;
+    margin: 0 5px;
+}
+
+.news-pic a, .course-pic a {
+    color: #c00;
+}
+
+.news-list {
+    margin-top: 20px;
+}
+
+.news-list li {
+    list-style: none;
+    background: url(../image/list.jpg) no-repeat;
+    padding-left: 10px;
+    margin: 8px;
+    border-bottom: 1px dotted #ccc;
+}
+
+.news-list a:link, .news-list a:visited {
+    color: #000;
+}
+
+.news-list a:hover, .news-list a:active {
+    color: #f00;
+}
+
+.news-list span {
+    color: #999;
+    float: right;
+}
+
+.course-pic {
+    height: 120px;
+    margin-top: 10px;
+    line-height: 20px;
+}
+
+.course-type {
+    height: 38px;
+    width: 327px;
+    background: url(../image/product_type_bg.jpg) no-repeat;
+    margin: 20px auto;
+}
+.course-type li {
+    list-style: none;
+    float: left;
+    line-height: 38px;
+    margin: 0 13px;
+}
+
+.video {
+    height: 185px;
+    border: 1px solid #e8e8e8;
+}
+
+.video-content {
+    height: 150px;
+}
+
+.sidebar-ad {
+    height: 55px;
+    border: 1px solid #e8e8e8;
+    margin-top: 10px;
+}
+
+.copyright {
+    width: 100%;
+    height: 200px;
+    background: #e8e8e8;
+    margin-top: 10px;
+    clear: both;
+}
+
+.copyright-content {
+    width: 1000px;
+    margin: 0 auto;
+    padding-top: 30px;
+}
+
+.copyright-content li {
+    list-style: none;
+    float: left;
+    width: 200px;
+    background: url(../image/line.png) no-repeat right center;
+    text-align: center;
+    line-height: 30px;
+}
+
+.copyright-content a {
+    color: #999;
+    font-size: 18px;
+}
+
+.copyright-content li ul li a {
+    font-size: 14px;
+}
+
+/*news html css*/
+.list-main {
+    min-height: 350px;
+    _height: 350px;/*ie6兼容*/
+    background: #fff;
+    margin-top: 10px;
+}
+
+.news-type {
+    width: 220px;
+    height: 350px;
+    _heihgt:350px; /*ie6兼容*/
+    border: 1px solid #e8e8e8;
+    float: left;
+}
+
+.list-box {
+    width: 770px;
+    min-height: 350px;
+    border: 1px solid #e8e8e8;
+    float: right;
+    background: #fff;
+}
+
+.news-type h2 {
+    height: 35px;
+    line-height: 35px;
+    font-size: 14px;
+    color: #666;
+    background: url(../image/title_bg.gif) repeat-x;
+    padding-left: 20px;
+}
+
+.news-type-content {
+    height: 365px;
+    background: url(../image/content_bg.gif) repeat-x;
+}
+
+.news-type-content li {
+    height: 30px;
+    line-height: 30px;
+}
+
+.news-type-content li a {
+    color: #666;
+    background:url(../image/li_bg.gif) no-repeat left center;
+    padding-left: 15px;
+    display: block;
+}
+
+.news-type-content li a:hover {
+    color: #009cdf;
+    background:url(../image/li_bg2.gif) no-repeat left center;
+    background-color: #f2f2f2;
+}
+
+.list-box h2 {
+    font-size: 14px;
+    color: #666;
+    height: 35px;
+    line-height: 35px;
+    background: url(../image/type_bg.png) repeat-x;
+    padding-left: 20px;
+}
+
+.page {
+    height: 40px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.page a {
+    display: inline-block;
+    border: 1px solid #e8e8e8;
+    margin: 5px;
+    padding: 5px 10px;
+}
+
+.page a:link, .page a:visited {
+    color: #000;
+}
+.page a:hover, .page a:active {
+    color: #fff;
+    background: #cc1b1b;
+}
+
+/*news1 css*/
+.list-box h1 {
+    font-size: 20px;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.newsInfo {
+    color: #666;
+    text-align: center;
+    border-bottom: 1px dotted #666;
+}
+
+.news-content {
+    font-size: 14px;
+    padding: 20px;
+    line-height: 30px;
+    text-indent: 2em;
+}
